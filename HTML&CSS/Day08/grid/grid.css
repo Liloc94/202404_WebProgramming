@@ -1,0 +1,14 @@
+.container {
+  /* 자식들을 바둑판화 배치 시키기 */
+  display: grid;
+  /* 자식요소의 넓이만큼 */
+  width: fit-content;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}

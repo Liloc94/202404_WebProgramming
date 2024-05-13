@@ -1,0 +1,123 @@
+.header {
+  width: 100vw;
+  height: 60px;
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+}
+
+.header__contents {
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  font-weight: 600;
+  font-size: 28px;
+  margin-left: 20px;
+}
+
+.header__logo:hover {
+  cursor: pointer;
+}
+
+.header__menus {
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  list-style: none;
+}
+
+.header__menus > .bar-icon {
+  display: none;
+  padding: 22px 10px 22px 10px;
+  margin-right: 50px;
+}
+
+.header__menus > .links {
+  padding: 22px 10px 22px 10px;
+  transition: all 0.5s;
+}
+
+.header__menus > .links:hover {
+  cursor: pointer;
+  color: white;
+  background-color: gray;
+}
+
+.first__section {
+  width: 100vw;
+  height: 100vh + 20px;
+  background-color: white;
+  position: relative;
+}
+
+.first__section > video {
+  width: 100%;
+  height: 100%;
+}
+
+.first__section--contents {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0.86;
+}
+
+.first__section--texts {
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin: 0 auto;
+}
+
+.second__section {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.second__section--contents {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 13rem;
+}
+
+.second__section--title {
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.second__section--cardBox {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.second__section--carditem {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}

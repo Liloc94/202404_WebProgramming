@@ -1,0 +1,38 @@
+/* 타겟 { 어떻게 꾸밀 것인가 }*/
+h1 {
+  background-color: green;
+  color: white;
+  font-size: 20px;
+}
+h2 {
+  background-color: #333;
+  color: red;
+  font-size: 20px;
+}
+h3 {
+  background-color: blue;
+  color: whitesmoke;
+  font-size: 20px;
+}
+a {
+  background-color: pink;
+  list-style: none;
+}
+
+/* div {
+  background-color: yellow;
+}
+
+span {
+  background-color: skyblue;
+} */
+
+div {
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 400px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 7px;
+}

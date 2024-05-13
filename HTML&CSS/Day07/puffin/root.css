@@ -1,0 +1,20 @@
+:root {
+  --primary-purple-300: #8f69dd;
+  --primary-purple-200: #bea9ed;
+  --primary-purple-100: #d8cbf4;
+  --primary-purple-50: #f0eafa;
+  --font-font-black: #111;
+  --font-font-white: #fff;
+  --font-font-100: #999;
+  --font-font-200: #666;
+  --secondary-orange-100: #fbae8a;
+  --secondary-orange-200: #f98e5a;
+  --secondary-orange-300: #f77833;
+  --secondary-black-200: #232323;
+  --neutrals-black: #000;
+  --neutrals-white: #fff;
+  --neutrals-gray-10: #f7f6fa;
+  --neutrals-gray-50: #f3f1f1;
+  --neutrals-gray-100: #e7e5e5;
+  --neutrals-gray-200: #a6a4a4;
+}

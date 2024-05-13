@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+main {
+  font-style: "Pretendard-Regular";
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.header__contents {
+  background-color: white;
+}
+
+.first__section--texts > h1 {
+  font-size: 90px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 25px;
+}
+.first__section--texts > p {
+  font-size: 19px;
+  color: gray;
+  margin-bottom: 50px;
+}
+
+.first__section--moreBtn {
+  width: 560px;
+  color: white;
+  font-weight: 600;
+  font-size: 17px;
+  border: 1px solid white;
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+  transition: background-color, color 0.5s;
+}
+
+.first__section--moreBtn:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+@media screen and (max-width: 1024px) {
+  .header__menus > .links {
+    display: none;
+  }
+
+  .header__menus > .bar-icon {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__contents {
+    max-width: 324px;
+    margin: none;
+  }
+
+  .first__section--texts {
+    max-width: 324px;
+  }
+  .header__menus > .bar-icon {
+    margin: 0;
+  }
+  .second__section--cardBox {
+    display: grid;
+    width: fit-content;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 50px;
+  }
+
+  .second__section--carditem {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

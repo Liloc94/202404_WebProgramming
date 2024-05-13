@@ -1,0 +1,115 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+}
+
+@font-face {
+  font-family: "WavvePADO-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/WavvePADO-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 700px;
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  border-radius: 30px;
+  padding: 50px 25px 50px 25px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transition: background-image 0.5s;
+}
+
+.container:hover {
+  background-image: linear-gradient(to top, #2af598 0%, #009efd 100%);
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 12px 50px 12px;
+}
+
+.showself {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.img > img {
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  object-position: 90% center;
+  transition: transform 0.5s;
+}
+
+.img > img:hover {
+  transform: scale(1.2);
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: "WavvePADO-Regular";
+  font-size: 20px;
+  font-weight: 990;
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+}
+
+.linkbutton {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.button {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 20px 15px 20px 15px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.icons {
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 15px;
+}
+
+.button:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.icons > i:hover {
+  opacity: 0.5;
+  cursor: pointer;
+  color: white;
+  font-size: 45px;
+}
+
+i {
+  transition: all 0.3s;
+}

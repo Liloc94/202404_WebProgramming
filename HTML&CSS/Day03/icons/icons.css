@@ -1,0 +1,86 @@
+.bigcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  background-color: blue;
+  width: fit-content;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.findicon {
+  display: flex;
+  gap: 15px;
+}
+
+.find {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+
+  border-radius: 10px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+  height: 120px;
+  margin-bottom: 15px;
+
+  border-radius: 10px;
+  background-color: white;
+}
+
+.icontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+i {
+  font-size: 30px;
+}
+
+span {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.yellow {
+  color: rgb(243, 243, 19);
+}
+
+.red {
+  color: rgb(255, 37, 37);
+}
+
+.blue {
+  color: rgb(37, 37, 255);
+}
+
+.green {
+  color: rgb(15, 255, 15);
+}
+
+.gray {
+  color: rgb(62, 226, 255);
+}

@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "YangjuByeolsanA1";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405@1.0/YangjuByeolsanA1.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  width: 100vw;
+  height: 80px;
+  background-color: blueviolet;
+}
+
+nav {
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  background-color: blueviolet;
+  margin: 0 auto;
+}
+
+/* main {
+  display: flex;
+  flex-direction: column;
+} */
+
+.first {
+  width: 100vw;
+  height: 100vh;
+  background-color: blueviolet;
+}
+
+.first > .contents {
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: var(--color-blue-01);
+}
+
+.second {
+  width: 100vw;
+  height: 100vh;
+  background-color: blueviolet;
+}
+
+.second > .contents {
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: var(--color-blue-03);
+}

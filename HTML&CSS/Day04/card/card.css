@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "yg-jalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+}
+
+.card-container {
+  display: flex;
+  width: 440px;
+  height: 540px;
+  border-radius: 12px;
+  background-color: (
+    309deg,
+    rgba(250, 255, 28, 1) 0%,
+    rgba(153, 255, 162, 1) 49%,
+    rgba(255, 156, 6, 1) 100%
+  );
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  padding: 0 22px;
+}
+
+.img {
+  background-size: cover;
+  object-fit: cover;
+}
+
+.pic1 {
+  background-image: url(../travel/busan.jpg);
+}
+
+.pic2 {
+  background-image: url(../travel/incheon.jpg);
+}
+
+.pic3 {
+  background-image: url(../travel/jeju.jpg);
+}
+
+.pic4 {
+  background-image: url(../travel/seoul.jpg);
+}
+
+.topic,
+.info,
+.description {
+  font-family: "yg-jalnan";
+  padding: 25px 15px 30px 15px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 10px;
+}
+
+.topic > span {
+  color: #dbdbdb;
+  font-size: 12px;
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 5px;
+}
+
+.info > span {
+  color: white;
+  font-size: 38px;
+}
+
+.description > span {
+  font-size: 16px;
+  color: #dbdbdb;
+}

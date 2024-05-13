@@ -1,0 +1,65 @@
+.contents {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: fit-content;
+}
+.box {
+  width: 100px;
+  height: 100px;
+}
+
+.red {
+  background-color: red;
+}
+.green {
+  background-color: green;
+}
+.blue {
+  background-color: blue;
+}
+.yellow {
+  background-color: yellow;
+}
+
+/* 모바일 버전 or 태블릿 버전 관련된 CSS */
+/* 화면크기 768px 이하로는 아래와 같은 CSS 를 적용한다는 의미*/
+
+/* 태블릿 */
+@media screen and (max-width: 1024px) {
+  .contents {
+    display: flex;
+    justify-content: center;
+
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: fit-content;
+  }
+  .pc__nav {
+    display: none;
+  }
+}
+
+/* 모바일 */
+@media screen and (max-width: 768px) {
+  .contents {
+    max-width: 344px;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: fit-content;
+  }
+}

@@ -1,0 +1,28 @@
+:root {
+  /* colors */
+  --color-blue-01: #2379ff;
+  --color-blue-02: #002765;
+  --color-blue-03: #d8f3ff;
+
+  --color-black-01: #000000;
+  --color-black-02: #374553;
+  --color-black-03: #646f7c;
+
+  /* fonts */
+  --font-size-normal: 16px;
+  --font-size-large: 24px;
+  --font-size-small: 12px;
+
+  /* 여백 및 간격 */
+  --base-padding: 1rem;
+  --max-width: 1200px;
+
+  /* 테두리 */
+  --border-radius: 8px;
+
+  /* 그림자 */
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* 전환 효과 */
+  --transition-fast: 0.3s;
+}

@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  border: 1px solid black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  width: 1000px;
+  height: 1000px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+}
+
+.darkferiwinkle {
+  background-color: #575fcf;
+}
+
+.freespeechblue {
+  background-color: #3c40c6;
+}
+
+.yrielyellow {
+  background-color: #ffdd59;
+}
+
+.vibrantyellow {
+  background-color: #ffd32a;
+}

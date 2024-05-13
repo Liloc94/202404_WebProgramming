@@ -1,0 +1,31 @@
+.selector {
+  display: flex;
+  border: none;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+span {
+  border: 1px solid #ebebeb;
+  border-radius: 100px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.seclected {
+  background-color: #0078ff;
+  color: white;
+}
+
+i {
+  margin-right: 5px;
+}
+
+span:hover {
+  background-color: #0078ff;
+  color: white;
+}
