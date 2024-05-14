@@ -116,13 +116,6 @@ const btnbox = document.createElement("div");
 btnbox.style.width = "100px";
 btnbox.style.height = "100px";
 btnbox.style.border = "1px solid black";
-document.body.appendChild(btnbox);
-
-document.body.appendChild(btn1);
-document.body.appendChild(btn2);
-document.body.appendChild(btn3);
-document.body.appendChild(btn4);
-document.body.appendChild(btn5);
 
 btn1.addEventListener("click", () => {
   btnbox.style.backgroundColor = "red";
@@ -143,3 +136,10 @@ btn4.addEventListener("click", () => {
 btn5.addEventListener("click", () => {
   btnbox.style.backgroundColor = "blue";
 });
+
+document.body.appendChild(btnbox);
+document.body.appendChild(btn1);
+document.body.appendChild(btn2);
+document.body.appendChild(btn3);
+document.body.appendChild(btn4);
+document.body.appendChild(btn5);
