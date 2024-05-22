@@ -1,0 +1,56 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.checked {
+  color: black;
+}
+.notChecked {
+  color: #ddd;
+}
+
+.passed {
+  background-color: black;
+  color: white;
+}
+
+.notpassed {
+  color: #dbdbdb;
+  background-color: #dbdbdb;
+}
+
+.nextBtn {
+  padding: 10px 40px;
+  border-radius: 15px;
+  margin-top: 30px;
+  border: none;
+}
+
+span {
+  text-decoration: underline;
+}
+
+.agreeFirst:hover {
+  cursor: pointer;
+  color: gray;
+}
+.agreeSecond:hover {
+  cursor: pointer;
+  color: gray;
+}
+.agreeThird:hover {
+  cursor: pointer;
+  color: gray;
+}
+.agreeFourth:hover {
+  cursor: pointer;
+  color: gray;
+}
