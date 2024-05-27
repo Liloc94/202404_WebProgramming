@@ -1,0 +1,99 @@
+body {
+  width: 100vw;
+  height: 100vw;
+  overflow-x: hidden;
+  padding-top: 30px;
+  background-color: blanchedalmond;
+}
+
+.userDisplay {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 55px;
+}
+
+.userInfoBox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 45px;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 0.2px solid black;
+  border-left: 0.2px solid black;
+  border-bottom: 6px solid rgb(0, 0, 0);
+  border-right: 6px solid rgb(0, 0, 0);
+  border-radius: 18px;
+
+  background-color: rgb(89, 212, 247);
+  transition: all 0.5s;
+  box-shadow: none;
+}
+
+.userInfoBox:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  background-color: rgb(0, 0, 0);
+
+  border: 5px solid red;
+  color: white;
+  cursor: pointer;
+}
+
+.userInfoBox:hover > .scripts > .userID {
+  color: red;
+}
+.userInfoBox:hover > .scripts > .fullName {
+  color: red;
+}
+.userInfoBox:hover > .scripts > .jobInfo {
+  color: red;
+}
+
+.userInfoBox:hover > #userImage {
+  background-color: red;
+}
+
+.scripts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: all 0.3s;
+  margin-right: 35px;
+  height: 100%;
+  border-right: 12px solid azure;
+}
+
+.fullName {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.jobInfo {
+  color: rgb(23, 0, 151);
+  font-style: italic;
+}
+
+.userID {
+  color: black;
+  text-decoration: underline;
+  text-align: left;
+}
+
+#userImage {
+  width: 70%;
+  height: 70%;
+  object-fit: cover;
+
+  border-radius: 50%;
+  border: 5px solid chartreuse;
+  margin: 0 auto;
+
+  overflow: hidden;
+  background-color: white;
+  transition: all 1s;
+}
