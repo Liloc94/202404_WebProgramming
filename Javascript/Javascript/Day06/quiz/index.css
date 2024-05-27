@@ -1,0 +1,45 @@
+.box {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  transition: all 0.4s;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button {
+  box-sizing: border-box;
+  border: 1px solid black;
+  background-color: white;
+  margin: 0px 5px;
+}
+
+.colorBtnContainer > button:nth-child(1):hover {
+  background-color: red;
+}
+.colorBtnContainer > button:nth-child(2):hover {
+  background-color: blue;
+}
+.colorBtnContainer > button:nth-child(3):hover {
+  background-color: orange;
+}
+.colorBtnContainer > button:nth-child(4):hover {
+  background-color: green;
+}
+.colorBtnContainer > button:nth-child(5):hover {
+  background-color: darkviolet;
+}
+
+.sizeBtnContainer > button:hover {
+  background-color: black;
+  border: 1px solid red;
+  color: white;
+}
+
+.borderBtnContainer > button:hover {
+  background-color: black;
+  border: 1px solid red;
+  color: white;
+}
