@@ -8,7 +8,7 @@ const menuDiv = document.querySelector(".menu");
 
 submitBtn.addEventListener("click", () => {
   const iv = addInput.value;
-  let menuTexts = " ";
+  let menuTexts = "";
   menuDiv.innerText = menuTexts;
   menu.push(iv);
   menu.forEach((v) => {

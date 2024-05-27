@@ -49,3 +49,5 @@ sqaureWidthBox.style.height = "120px";
 sqaureWidthBox.style.border = "1px solid black";
 sqaureWidthBox.innerText = resultTotalWidth;
 document.body.appendChild(sqaureWidthBox);
+
+document.body.style.display = "flex";

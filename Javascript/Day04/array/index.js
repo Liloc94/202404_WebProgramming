@@ -36,29 +36,39 @@
 // slice("타겟인덱스,자를 범위") -> 타겟인덱스부터 자를 범위 '이전 -1'까지 잘라냄
 //
 
-// const option = ["100 blue", "200 green", "500 black", "400 red"];
-// // wh : 100 bg : blue wh : 200 bg : green
+const option = ["100 blue", "200 green", "500 black", "400 red"];
+// wh : 100 bg : blue wh : 200 bg : green
 
-// const addBoxBtn = document.createElement("button");
-// addBoxBtn.innerText = "색깔 바꾸기";
-// document.body.appendChild(addBoxBtn);
+const arrayTest = [];
+// 이중 forEach로 배열데이터 정리
+option.forEach((x) => {
+  const tempArray = x.split(" ");
+  tempArray.forEach((x) => {
+    x.trim();
+    arrayTest.push(x);
+  });
+});
 
-// addBoxBtn.addEventListener("click", () => {
-//   const tempSetting = window.prompt("크기 헥사코드 입력");
-//   const tempArray = tempSetting.split(" ");
-//   const colorBox = document.createElement("div");
-//   colorBox.style.width = tempArray[0] + "px";
-//   colorBox.style.height = tempArray[0] + "px";
-//   colorBox.style.backgroundColor = tempArray[1];
-//   document.body.appendChild(colorBox);
-// });
+const addBoxBtn = document.createElement("button");
+addBoxBtn.innerText = "색깔 바꾸기";
+document.body.appendChild(addBoxBtn);
 
-// option.forEach((x) => {
-//   const tempArray = x.split(" ");
-//   const colorBox = document.createElement("div");
-//   colorBox.style.width = tempArray[0] + "px";
-//   colorBox.style.height = tempArray[0] + "px";
-//   colorBox.style.backgroundColor = tempArray[1];
+addBoxBtn.addEventListener("click", () => {
+  const tempSetting = window.prompt("크기 헥사코드 입력");
+  const tempArray = tempSetting.split(" ");
+  const colorBox = document.createElement("div");
+  colorBox.style.width = tempArray[0] + "px";
+  colorBox.style.height = tempArray[0] + "px";
+  colorBox.style.backgroundColor = tempArray[1];
+  document.body.appendChild(colorBox);
+});
 
-//   document.body.appendChild(colorBox);
-// });
+option.forEach((x) => {
+  const tempArray = x.split(" ");
+  const colorBox = document.createElement("div");
+  colorBox.style.width = tempArray[0] + "px";
+  colorBox.style.height = tempArray[0] + "px";
+  colorBox.style.backgroundColor = tempArray[1];
+
+  document.body.appendChild(colorBox);
+});

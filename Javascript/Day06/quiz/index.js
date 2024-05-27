@@ -4,7 +4,7 @@ const sizeBtns = [];
 const borderBtns = [];
 
 const colorSets = ["red", "blue", "orange", "green", "darkviolet"];
-const sizeSets = ["100px", "200px", "300px", "400px", "500px"];
+const sizeSets = ["100px", "150px", "200px", "250px", "300px"];
 const borderSets = ["0px", "10px", "20px"];
 
 const divBox = document.querySelector(".box");
