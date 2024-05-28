@@ -1,4 +1,7 @@
-import { datas } from "./data.js";
+import { dataMapExtract, datas } from "./data.js";
+import { delhyphen } from "./data.js";
+import { appNameUpper } from "./data.js";
+import { moneyAmount } from "./data.js";
 
 // 1. id currency , money , phoneNum 콘솔로
 // 2. animalName -> animal, car:{make,model,year} 콘솔로
@@ -18,7 +21,7 @@ import { datas } from "./data.js";
 //     car: { carMake, carModel, carModelYear },
 //   })
 // );
-// console.log(aniCar);
+// aniCar.forEach((v) => console.log(v.animal, v.car));
 
 // 3.
 // datas.forEach(({ ipAddr, color }) => {
@@ -26,19 +29,21 @@ import { datas } from "./data.js";
 //     [...ipAddr.slice(ipAddr.lastIndexOf(".") + 1, ipAddr.length)].reduce(
 //       (a, c) => parseInt(a) + parseInt(c)
 //     ) > 10;
-//   isOverTen ? console.log(`${ipAddr}\n${color}`) : console.log("no Data");
+//   return isOverTen ? console.log(`${ipAddr}\n${color}`) : "";
 // });
 
 // 4.
-datas.map(({ timeZone, carMake, phoneNum }) => {
-  const slicedNum = phoneNum.slice(0, 3);
+// datas.map(({ timeZone, carMake, phoneNum }) => {
+//   const slicedNum = phoneNum.slice(0, 3);
+//   const vowelArr = ["a", "i", "e", "o", "u", "y"];
 
-  timeZone
-    .toLowerCase()
-    .split("/")[1]
-    .filter((v) => !v.includes("a" || "i" || "e" || "o" || "u" || "y"))
-    ? // TODO: 여기부터하기
+//   const hasVowel =
+//     [...timeZone.split("/")[0]].some(
+//       (v, i) => v.toLowerCase() === vowelArr[i]
+//     ) &&
+//     [...timeZone.split("/")[1]].some((v, i) => v.toLowerCase() === vowelArr[i]);
+//   hasVowel ? console.log(`${timeZone}\n${carMake}\n${slicedNum}`) : "no Data";
+// });
 
-      console.log(`${timeZone}\n${carMake}\n${slicedNum}`)
-    : "";
-});
+// 5.
+dataMapExtract(datas);
