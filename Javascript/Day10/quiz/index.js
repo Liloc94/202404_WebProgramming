@@ -1409,6 +1409,7 @@ const makeProfile = (data) => `
 <h5 class="userID">USER NO.${data.id}</h5>
     <h2 class="fullName">${data.fullName}</h2>
     <h4 class="jobInfo">${data.job}</h4>
+    <span class="userLang>${data.language}</span>
   </div>
 </div>
   `;
