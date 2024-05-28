@@ -1,8 +1,5 @@
-import { dataMapExtract, datas } from "./data.js";
-import { delhyphen } from "./data.js";
-import { appNameUpper } from "./data.js";
-import { moneyAmount } from "./data.js";
-
+import { datas } from "./data.js";
+import { dataMapExtract } from "./functions.js";
 // 1. id currency , money , phoneNum 콘솔로
 // 2. animalName -> animal, car:{make,model,year} 콘솔로
 // 3. ipaddress 맨 마지막 세자리합 10 이사면 id,color 콘솔로
