@@ -2,18 +2,30 @@ import { gymData } from "./gymData.js";
 
 const refinedData = gymData.centerList.map(
   ({
-    gymName = "",
-    gymPhotoSmall: gymImg = "",
-    address: gymAddr = "",
-    tags: gymTags = "",
-    program: gymProg = "",
-    service: gymService = "",
-    price: gymPrice = "",
-  }) => ({ gymName, gymImg, gymAddr, gymTags, gymProg, gymService, gymPrice })
+    gymName,
+    gymPhotoSmall: gymImg,
+    address: gymAddr,
+    tags: gymTags,
+    program: gymProg,
+    service: gymService,
+    price: gymPrice,
+    review: gymReview,
+  }) => ({
+    gymName,
+    gymImg,
+    gymAddr,
+    gymTags,
+    gymProg,
+    gymService,
+    gymPrice,
+    gymReview,
+  })
 );
 
 export const finalRefine = [...refinedData];
 
+const monthlyPrice = (price) => (price / 12).toLocaleString();
+const originPrice = (price) => price.toLocaleString();
 export const spreadDatas = (gym) =>
   `
   <div class="liteAdList">
@@ -28,7 +40,7 @@ export const spreadDatas = (gym) =>
         </div>
         <div class="inners-scripts-container">
           <div class="tagLike">
-            <span class="tag">헬스 / P.T</span>
+            <span class="tag">${[...gym.gymTags]}</span>
             <svg
               width="24"
               height="24"
@@ -47,7 +59,7 @@ export const spreadDatas = (gym) =>
           </div>
           <div class="inner-scripts-main">
             <div class="gymName">
-              <span class="gymName-inner">시청 무브짐앤무브맥스PT</span>
+              <span class="gymName-inner">${gym.gymName}</span>
               <div class="gymSubInfo">
                 <svg
                   width="13"
@@ -62,20 +74,24 @@ export const spreadDatas = (gym) =>
                   ></path>
                 </svg>
                 <!-- 별모양 -->
-                <span class="reviewRate">4.9</span>
-                <span class="reviewCount">(13)</span>
-                <span class="gymAddr-inner">서울 중구 서소문동</span>
+                <span class="reviewRate">${gym.gymReview.rate}</span>
+                <span class="reviewCount">(${gym.gymReview.count})</span>
+                <span class="gymAddr-inner">${gym.gymAddr}</span>
               </div>
             </div>
             <div class="gymPrices">
-              <span class="originalPrice">44,000원</span>
+              <span class="originalPrice">${originPrice(
+                gym.gymPrice.originalPrice
+              )}</span>
               <div class="priceLine">
                 <div class="eventTags">
                   <span class="dailyItem">일일권</span>
                   <span class="membership">다짐 회원가</span>
                 </div>
                 <div class="lowestPrice">
-                  <span class="discountRate">15%</span> 37,500원~/월
+                  <span class="discountRate">15%</span> ${monthlyPrice(
+                    gym.gymPrice.lowestPrice
+                  )}~/월
                 </div>
               </div>
             </div>
@@ -87,13 +103,13 @@ export const spreadDatas = (gym) =>
           <div class="freeProg">
             <p class="freeProg-inner">무료 프로그램</p>
             <span class="freeProg-innerText">
-              O.T (3개월 이상 등록 시 - 30분 1회)
+              ${gym.gymProg.free}
             </span>
           </div>
           <div class="freeServices">
             <p class="freeServices-inner">무료 서비스</p>
             <span class="freeServices-innerText">
-              샤워실 / 수건 / 대형제빙기 / 무료주차 2시간 30분
+              ${gym.gymService.free}
             </span>
           </div>
         </div>

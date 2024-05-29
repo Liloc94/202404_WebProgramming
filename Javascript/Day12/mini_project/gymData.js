@@ -20,7 +20,7 @@ export const gymData = {
         free: "",
       },
       service: {
-        free: "샤워실 / 수건 / 대형제빙기 / ️ 무료주차 2시간 30분 / 인바디 측정",
+        free: "샤워실 / 수건 / 대형제빙기 / 무료주차 2시간 30분 / 인바디 측정",
       },
       price: {
         name: "헬스 회원권",

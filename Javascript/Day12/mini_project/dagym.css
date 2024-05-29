@@ -1,6 +1,7 @@
 body {
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .liteAdList {
@@ -60,7 +61,7 @@ body {
 }
 .imgTag > img {
   width: 370px;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
   border-top-left-radius: 10px;
 }
@@ -103,18 +104,21 @@ body {
 .freeProperty {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+
   border-radius: 8px;
-  background-color: #dbdbdb;
-  padding: 10px;
+  background-color: #efefef;
+  padding: 0px 10px;
 }
 
 .freeProg,
 .freeServices {
   display: flex;
   flex-direction: row;
-  gap: 30px;
-  font-size: 14px;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(69, 69, 69);
 }
 
 .freeProg-inner,
