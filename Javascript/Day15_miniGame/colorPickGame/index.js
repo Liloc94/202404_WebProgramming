@@ -2,17 +2,11 @@
 let stage = 1; // 스테이지 번호
 let paletteRow = 2; // 색깔 칸 길이
 let paletteSize = paletteRow ** 2; // 2번클리어 마다 칸 길이 제곱
-let isPlaying = false; // 플레이 상태
 let leftTime = 15; // 남은 시간
 let timer = 0; // 타이머
 let answerTarget = 0; // 정답칸
 let answerOpacity = 0.4; // 정답칸 투명도
 let color = {}; // 임시저장용 색깔 오브젝트
-// 타이머, 팔레트, 스테이지번호 변수초기화
-let paletteContainer = document.querySelector(".gridBlock");
-let playerTime = document.querySelector(".playerTime");
-let stageNum = document.querySelector(".stageNum");
-let resultMsgTag = document.querySelector(".resultMsg");
 // 게임실행 초기값
 function initGame() {
     stage = 1;
@@ -23,30 +17,36 @@ function initGame() {
     answerOpacity = 0.4;
     color = {};
 }
-// 팔레트 아이템 생성
-function createPlatteItem() {
-    // 랜덤으로 타겟 아이템 생성
+// 팔레트 아이템 생성-----------------------------------------------  2
+function createPaletteItem() {
+    // 랜덤으로 타겟 아이템 생성-----------------------------------------------  3
     answerTarget = createTargetItem(paletteSize);
-    // 팔레트 아이템 세팅
-    settingPlatteItem();
+    // 팔레트 아이템 세팅-----------------------------------------------  4
+    setpaletteItem();
 }
-// function startGame() {
-// 게임 실행
-//   makePalette();
-//   timer = setInterval(() => {
-//       playerTime.innerHTML = --time;
-//       // 시간 초과
-//       if (time <= 0) {
-//           playerTime.innerHTML = 0;
-//           // 타이머 종료
-//           clearInterval(timer);
-//           // 결과 출력
-//           showGameResult();
-//           // 게임 초기값으로 세팅
-//           initGame();
-//       }
-//   }, 1000);
-// }
+// 타겟 생성
+function createTargetItem(paletteSize) {
+    return Math.floor(Math.random() * paletteSize);
+}
+const resultMsg = document.getElementsByClassName("result")[0];
+function startGame() {
+    // 게임 실행 함수
+    createPaletteItem();
+    // 1초 마다 타이머 초기시간 leftTime(15초)에서 증감연산자로 마이너스시킨다.
+    timer = setInterval(() => {
+        playerTime.innerHTML = --leftTime;
+        // 시간 초과
+        if (leftTime <= 0) {
+            playerTime.innerHTML = 0;
+            // 타이머 종료
+            clearInterval(timer);
+            // 결과 출력
+            showGameResult();
+            // 게임 초기값으로 세팅
+            initGame();
+        }
+    }, 1000);
+}
 function createColor(color) {
     // 랜덤 색깔 설정 함수
     color.red = Math.floor(Math.random() * 101) + 100;
@@ -55,22 +55,55 @@ function createColor(color) {
     return color;
 }
 // 팔레트 아이템 세팅
-const palette = document.getElementsByClassName("gridBlock")[0];
+const palette = document.getElementsByClassName("palette")[0];
 const paletteItem = document.getElementsByClassName("palette-Btn");
-// 타겟 생성
-function createTargetItem(paletteSize) {
-    return Math.floor(Math.random() * paletteSize);
+// 아이템 클릭 이벤트
+palette.addEventListener("click", function (e) {
+    console.log(e.target);
+    if (e.target.className === "palette-Btn") {
+        if (e.target.id === "target") {
+            selectTargetItem();
+        }
+        else {
+            selectWrongItem();
+        }
+    }
+});
+// 정답 처리
+function selectTargetItem() {
+    updateSettings();
+    createPaletteItem();
+}
+// 오답 처리
+function selectWrongItem() {
+    // 3초를 뺀 값이 0보다 작은 경우에도 0으로 고정
+    if (leftTime - 3 < 0) {
+        leftTime = 0;
+    }
+    else {
+        leftTime = leftTime - 3;
+    }
+    // 오답 선택 시 애니메이션
+    palette.classList.add("vibration"); // 바이브레이션 css 추가
+    setTimeout(function () {
+        palette.classList.remove("vibration"); // 오답 애니메이션 0.4 초뒤 제거
+    }, 400);
+    // 화면 갱신
+    playerTime.innerHTML = playerTime;
 }
 // 팔레트 태그 추가 함수
-function settingPlatteItem() {
+function setpaletteItem() {
     for (let i = 0; i < paletteSize; i++) {
-        i === answerTarget
-            ? (paletteContainer.innerHTML += `
-              <div class="palette-Btn" id="target"></div>
-          `)
-            : (paletteContainer.innerHTML += `
-              <div class="palette-Btn"></div>
-          `);
+        if (i === answerTarget) {
+            palette.innerHTML += `
+      <div class="palette-Btn" id="target"></div>
+      `;
+        }
+        else {
+            palette.innerHTML += `
+      <div class="palette-Btn"></div>
+      `;
+        }
     }
     // 아이템 크기 세팅
     let itemSize = 100 / paletteRow;
@@ -95,7 +128,7 @@ function updateSettings() {
     palette.innerHTML = "";
     // targetIndex, color는 팔레트 아이템 생성 시 랜덤 값으로 재생성되기 때문에 따로 리셋 처리 하지 않음
     stage++;
-    playerTime = 15;
+    leftTime = 15;
     // stage가 2씩 올라갈 때마다 팔레트 사이즈 증가
     if (stage % 2 === 1) {
         paletteRow++; // 팔레트 열 추가
@@ -108,24 +141,7 @@ function updateSettings() {
     }
     // 타이머, 스테이지 번호 갱신
     playerTime.innerHTML = leftTime;
-    stageNum.innerHTML = stage;
-}
-// 오답 처리
-function selectWrongItem() {
-    // 3초를 뺀 값이 0보다 작은 경우에도 0으로 고정
-    if (playerTime - 3 < 0) {
-        playerTime = 0;
-    }
-    else {
-        playerTime -= 3;
-    }
-    // 오답 선택 시 애니메이션
-    palette.classList.add("vibration"); // 바이브레이션 css 추가
-    setTimeout(function () {
-        palette.classList.remove("vibration"); // 오답 애니메이션 0.4 초뒤 제거
-    }, 400);
-    // 화면 갱신
-    playerTime.innerHTML = playerTime;
+    playerStage.innerHTML = stage;
 }
 // 게임 종료 문구
 function showGameResult() {
@@ -151,16 +167,39 @@ function showGameResult() {
     else if (stage > 30) {
         resultText = "이건 콘솔 안보고 절대 못깸.. 콘솔봤지??";
     }
-    resultMsgTag.innerHTML = `
-  <h1 class="modal__content-title--result color-red">
+    resultMsgTitle.innerHTML = `
+  <h1 class="result__text-title--result color-red">
       게임 종료!
   </h1>
-  <span class="modal__content-title--stage">
+  <span class="result__text-title--stage">
       기록 : <strong>STAGE ${stage}</strong>
   </span>
-  <p class="modal__content-title--desc">
+  <p class="result__text-title--desc">
       ${resultText}
   </p>
   `;
-    resultMsgTag.classList.add("show");
+    resultMsg.classList.add("show");
+    resultMsg.classList.remove("invisible");
 }
+// 결과창 닫기
+const resultMsgTitle = document.getElementsByClassName("result__text-title")[0];
+const resultMsgCloseButton = document.getElementsByClassName("result__text-close-button")[0];
+resultMsg.addEventListener("click", function (e) {
+    if (e.target === resultMsg || e.target === resultMsgCloseButton) {
+        resultMsg.classList.remove("show");
+        resultMsg.classList.add("invisible");
+        // 모달창 닫으면 화면 초기화 후 게임 재시작
+        palette.innerHTML = "";
+        playerTime.innerHTML = leftTime;
+        playerStage.innerHTML = stage;
+        startGame();
+    }
+});
+// 기본 값 세팅 및 다른 색깔 찾기 게임 자동 시작
+const playerTime = document.getElementById("player-time");
+const playerStage = document.getElementById("player-stage");
+window.onload = function () {
+    playerTime.innerHTML = leftTime;
+    playerStage.innerHTML = stage;
+    startGame();
+};

@@ -3,38 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../../../HTML&CSS/common/reset.css" />
+    <title>Game World : 다른 색깔 찾기</title>
     <link rel="stylesheet" href="index.css" />
     <script src="index.js" defer></script>
   </head>
   <body>
-    <section class="gameSection no-drag">
-      <div class="gameScreen">
-        <header class="gameInfo">
-          <div class="checkTime">
-            <span class="playerTime">15</span>
-          </div>
-          <div class="stageInfo">
-            <span class="stageInfo"
-              >STAGE
-              <span class="stageNum"></span>
-            </span>
-          </div>
-          <div class="otherGameBtn">
-            <span class="arrowBtn">ARROW</span>
-          </div>
+    <div id="container" class="no-drag">
+      <div class="board">
+        <header class="menu">
+          <nav class="menu__nav">
+            <div class="menu__nav-time">
+              <strong id="player-time" aria-label="남은시간"></strong>
+            </div>
+            <div class="menu__nav-stage">
+              STAGE <strong id="player-stage" aria-label="스테이지"></strong>
+            </div>
+          </nav>
         </header>
-        <div class="gridBlock"></div>
+
+        <main class="gameScreen">
+          <div class="palette"></div>
+        </main>
       </div>
-    </section>
-    <div class="msgBox">
-      <div class="resultMsg">
-        <h1 class="modal__content-title--result color-red">게임 종료!</h1>
-        <span class="modal__content-title--stage">
-          기록 : <strong>STAGE ${stage}</strong>
-        </span>
-        <p class="modal__content-title--desc">${resultText}</p>
+    </div>
+
+    <div class="result result-layer invisible">
+      <div class="result__text">
+        <div class="result__text-title"></div>
+        <button class="closeBtn result__text-close-button" type="button">
+          한 게임 더 ? 😡
+        </button>
       </div>
     </div>
   </body>
