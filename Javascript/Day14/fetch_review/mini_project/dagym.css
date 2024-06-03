@@ -4,6 +4,87 @@ body {
   overflow-x: hidden;
 }
 
+.searchContainer {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchContainer > h3 {
+  margin: 10px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.searchBar {
+  width: 600px;
+  height: 30px;
+  margin: 15px 0px;
+  padding: 5px;
+  font-weight: normal;
+  font-size: 15px;
+
+  color: rgb(61, 65, 73);
+  border: 1px solid rgb(218, 221, 229);
+  border-radius: 8px;
+  outline: none;
+  transition: scale 0.5s;
+}
+
+.searchBar:focus {
+  border: 2px solid blue;
+}
+
+.startSearchBtn {
+  position: absolute;
+  top: 20px;
+  right: 5px;
+  border: none;
+  background-color: inherit;
+}
+
+.erase {
+  display: none;
+}
+
+#glassIcon {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+}
+
+#searchIcon {
+  padding: 5px;
+  display: flex;
+  font-size: 20px;
+  transition: all 0.5s;
+}
+
+#searchIcon:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.searchBtn {
+  border: none;
+  background-color: inherit;
+}
+.searchBtn :hover {
+  cursor: pointer;
+  fill: white;
+  background-color: skyblue;
+}
+
 .liteAdList {
   max-width: 1000px;
   height: 100%;

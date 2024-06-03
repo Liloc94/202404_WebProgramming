@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../HTML&CSS/common/reset.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <section class="gameSection no-drag">
+      <div class="gameScreen">
+        <header class="gameInfo">
+          <div class="checkTime">
+            <span class="playerTime">15</span>
+          </div>
+          <div class="stageInfo">
+            <span class="stageInfo"
+              >STAGE
+              <span class="stageNum"></span>
+            </span>
+          </div>
+          <div class="otherGameBtn">
+            <span class="arrowBtn">ARROW</span>
+          </div>
+        </header>
+        <div class="gridBlock"></div>
+      </div>
+    </section>
+    <div class="msgBox">
+      <div class="resultMsg">
+        <h1 class="modal__content-title--result color-red">게임 종료!</h1>
+        <span class="modal__content-title--stage">
+          기록 : <strong>STAGE ${stage}</strong>
+        </span>
+        <p class="modal__content-title--desc">${resultText}</p>
+      </div>
+    </div>
+  </body>
+</html>

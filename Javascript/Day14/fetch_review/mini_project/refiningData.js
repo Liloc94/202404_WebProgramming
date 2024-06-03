@@ -26,6 +26,45 @@ export const finalRefine = [...refinedData];
 
 const monthlyPrice = (price) => parseInt(price / 12).toLocaleString();
 const originPrice = (price) => price.toLocaleString();
+
+export const spreadSearched = (searchValue, sectionTag) => {
+  console.log(sectionTag);
+  console.log(searchValue);
+  console.log("spreadSearched 함수 호출");
+  finalRefine
+    .filter((v) => {
+      v.gymName.includes(searchValue);
+    })
+    .forEach((v) => {
+      v.gymName.includes(searchValue)
+        ? alert(
+            "조건검증성공"
+          ) /*sectionTag.insertAdjacentHTML("beforeend", spreadDatas(v))*/
+        : alert("검색 결과가 존재하지 않습니다.");
+    });
+};
+
+export const searchFormAttach = () => `
+<div class="searchContainer">
+<h3>어떤 운동을 찾고 계신가요 ?</h3>
+<div class="inputContainer">
+<input
+type="text"
+class="searchBar erase"
+placeholder="검색어를 입력해 주세요."
+/>
+<button class="startSearchBtn erase">
+<i id="searchIcon" class="fa-solid fa-magnifying-glass-location"></i>
+</button>
+</div>
+<button class="searchBtn">
+  <i id="glassIcon" class="fa-solid fa-magnifying-glass">
+    <span class="searchText">검색</span>
+  </i>
+</button>
+</div>
+`;
+
 export const spreadDatas = (gym) =>
   `
   <div class="liteAdList">
