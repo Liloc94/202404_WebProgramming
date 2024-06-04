@@ -1,0 +1,54 @@
+.color-red {
+  color: red;
+}
+
+.color-blue {
+  color: skyblue;
+}
+
+.color-green {
+  color: lime;
+}
+
+.closeBtn {
+  background-color: lawngreen;
+}
+
+.closeBtn:hover {
+  background-color: lightgreen;
+  border-color: lightcoral;
+}
+
+#container {
+  background-color: black;
+}
+
+.menu__nav {
+  color: aliceblue;
+}
+
+.gameScreen {
+  background-color: black;
+}
+
+.result__text {
+  background-color: aliceblue;
+}
+
+.body {
+  color: black;
+}
+/*--------------------------------------------------------------------------*/
+
+@keyframes vibrationEffect {
+  from {
+    left: 0px;
+  }
+  to {
+    left: 10px;
+  }
+}
+
+.vibration {
+  animation: vibrationEffect 0.01s infinite;
+}
